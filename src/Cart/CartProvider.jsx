@@ -4,14 +4,13 @@ import { Scrollbars } from 'react-custom-scrollbars-2';
 import { cartContext } from './Cart';
 import Items from '../Items';
 const CartProvider = () => {
-    const {item} = useContext(cartContext)
 
+const {item, clearAll , totalItem, totalAmount} = useContext(cartContext)
 
     {
         if (item.length === 0) {
             return (
                 <>
-
                     <Header />
                     <div className='ml-36 pt-4'>
                         <h1 className='text-2xl font-bold'>Shopping Carts</h1>
@@ -38,7 +37,7 @@ const CartProvider = () => {
                     <Header />
                     <div className='ml-36 pt-4'>
                         <h1 className='text-2xl font-bold'>Shopping Carts</h1>
-                        <p>you have 7 items in shopping carts</p>
+                        <p>you have {totalItem} items in shopping carts</p>
                     </div>
                     <div className='flex justify-center items-center mt-9'>
                         <div className='bg-neutral-100 w-[80%] h-80 shadow-md'>
@@ -49,8 +48,8 @@ const CartProvider = () => {
                                 ))}
                             </Scrollbars>
                             <div className='mt-6 float-end '>
-                                <p className='text-xl pb-3'>Cost Cotol : <span className='font-bold'>2000 pkr</span></p>
-                                <button className='bg-green-600 w-32 p-2 float-end rounded-md'>Clear All</button>
+                                <p className='text-xl pb-3'>Cost Cotol : <span className='font-bold'>{totalAmount} pkr</span></p>
+                                <button onClick={()=> clearAll() } className='bg-green-600 w-32 p-2 float-end rounded-md'>Clear All</button>
                             </div>
                         </div>
 

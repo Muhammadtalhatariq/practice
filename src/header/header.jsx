@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaCartShopping } from "react-icons/fa6";
+import { cartContext } from '../Cart/Cart';
 const header = () => {
+  const {totalItem}  = useContext(cartContext)
     return (
         <>
             <div className='flex justify-center items-center '>
@@ -12,7 +14,7 @@ const header = () => {
                     <div className='relative'>
                         <FaCartShopping size={25} />
                         <div className='absolute bg-slate-400 size-5 rounded-full -top-2 -right-2'>
-                            <p className='text-white text-center'>1</p>
+                            <p className='text-white text-center'>{totalItem}</p>
                         </div>
                     </div>
                 </div>

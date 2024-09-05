@@ -3,9 +3,9 @@ import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { cartContext } from './Cart/Cart';
-const Items = ({ id, title, description, quantity, price, img }) => {
+const Items = ({ id, title, description, quantity, price, img  }) => {
 
-    const { removeItem } = useContext(cartContext)
+    const { removeItem, increase, decrese } = useContext(cartContext)
 
     return (
         <>
@@ -18,9 +18,9 @@ const Items = ({ id, title, description, quantity, price, img }) => {
                     </div>
                     <div>
                         <div className='flex gap-2'>
-                            <FaMinus />
-                            <input type="text" className='size-4 shadow-lg bg-slate-100' value={quantity} disabled />
-                            <FaPlus />
+                            <FaMinus onClick={()=> decrese(id)} />
+                            <input type="text" className='size-4 shadow-lg bg-slate-100' placeholder={quantity} disabled />
+                            <FaPlus  onClick={()=> increase(id)}/>
                         </div>
                     </div>
                     <div>
