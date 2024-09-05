@@ -1,8 +1,12 @@
 import React from 'react'
+import Cart from './Cart/Cart'
 
 const App = () => {
   return (
-    <div className='text-2xl bg-green-500'>App</div>
+    <>
+    
+      <Cart />
+    </>
   )
 }
 
