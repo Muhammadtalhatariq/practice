@@ -9,12 +9,12 @@ const Items = ({ id, title, description, quantity, price, img  }) => {
 
     return (
         <>
-            <div className='bg-slate-50 shadow-md  mx-10 mt-4' key={id}>
-                <div className='flex justify-between items-center mx-4'>
+            <div className='bg-slate-50 shadow-md  mx-10 ' key={id}>
+                <div className='flex justify-between items-center mx-4 flex-col sm:flex-row'>
                     <div className=' rounded-md'><img className='size-24' src={img} alt="" /></div>
                     <div>
                         <h3 className='text-xl font-bold'>{title}</h3>
-                        <p className='text-sm'>{description}</p>
+                        <p className='text-sm hidden sm:flex'>{description}</p>
                     </div>
                     <div>
                         <div className='flex gap-2'>

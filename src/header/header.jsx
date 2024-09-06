@@ -7,7 +7,7 @@ const header = () => {
     return (
         <>
             <div className='flex justify-center items-center '>
-                <div className='bg-neutral-100 flex justify-between items-center mx-20 w-[80%] p-2 mt-10 rounded-xl shadow-md'>
+                <div className='bg-neutral-100 flex justify-between items-center sm:mx-20 w-[80%] p-2 mt-4 rounded-xl shadow-md'>
                     <div className='flex justify-center items-center gap-2'>
                         <FaArrowLeft /> <p>Shopping Carts</p>
                     </div>
